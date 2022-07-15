@@ -1,0 +1,9 @@
+transformers[deepspeed]
+datasets
+numpy
+bert_score
+nltk
+git+https://github.com/Maluuba/nlg-eval.git@master
+sentencepiece
+rouge_score
+wandb
