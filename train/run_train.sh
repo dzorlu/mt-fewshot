@@ -4,8 +4,8 @@ export WANDB_PROJECT=mt-fewshot
 ./train.py \
     --model_name_or_path bigscience/T0_3B \
     --do_eval \
-    --train_file ../train_answer_generation.json \
-    --validation_file ../test_answer_generation.json \
+    --train_file ../data/train_answer_generation.json \
+    --validation_file ../data/test_answer_generation.json \
     --text_column prompt \
     --target_column output \
     --output_dir output \
@@ -17,7 +17,7 @@ export WANDB_PROJECT=mt-fewshot
     --predict_with_generate \
     --save_total_limit 10\
     --max_train_samples 2 \
-    --max_eval_samples 10 \
+    --max_eval_samples 2 \
     --evaluation_strategy steps\
     --num_train_epochs 1\
     --load_best_model_at_end\

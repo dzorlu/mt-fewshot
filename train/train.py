@@ -354,8 +354,6 @@ def main():
 
     def compute_metrics(eval_preds, input_ids=None, global_step=0):
 
-        print('eval_preds')
-        print(eval_preds)
     
         def postprocess_text(preds, labels):
             preds = [pred.strip() for pred in preds]
@@ -371,15 +369,10 @@ def main():
         if isinstance(preds, tuple):
             preds = preds[0]
 
-        print("preds:")
-        print(preds)
-        print('labels')
-        print(labels)
-
         
         # input_ids = input_ids.cpu()
-        input_ids = np.where(input_ids != -100, input_ids, tokenizer.pad_token_id)
-        decoded_inputs = tokenizer.batch_decode(input_ids, skip_special_tokens=True)
+        #input_ids = np.where(input_ids != -100, input_ids, tokenizer.pad_token_id)
+        #decoded_inputs = tokenizer.batch_decode(input_ids, skip_special_tokens=True)
 
         decoded_preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
         if data_args.ignore_pad_token_for_loss:
@@ -436,8 +429,8 @@ def main():
         # write result
         output_prediction_file = os.path.join(training_args.output_dir, f"intermediate_result_{global_step}.jsonl")
         with open(output_prediction_file, "a") as writer:
-            for inputs, preds, labels in zip(decoded_inputs, decoded_preds, decoded_labels):
-                output_str = json.dumps({'input_ids': inputs, 'preds': preds, 'labels': labels})
+            for preds, labels in zip(decoded_preds, decoded_labels):
+                output_str = json.dumps({'preds': preds, 'labels': labels})
                 writer.write(output_str + '\n')
 
         output_prediction_file = os.path.join(training_args.output_dir, f"intermediate_metrics_{global_step}.json")
