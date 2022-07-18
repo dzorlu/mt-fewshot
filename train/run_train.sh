@@ -1,7 +1,7 @@
 
 export WANDB_PROJECT=mt-fewshot
 deepspeed ./train.py \
-    --model_name_or_path bigscience/T0_3B \
+    --model_name_or_path bigscience/T0 \
     --do_eval \
     --train_file ../data/train_response_generation.json \
     --validation_file ../data/test_response_generation.json \
