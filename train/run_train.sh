@@ -5,7 +5,7 @@ deepspeed ./train.py \
     --deepspeed t0ds-config.json \
     --do_eval \
     --do_train \
-    --train_file ../data/train_response_generation.json \
+    --train_file ../data/test_response_generation.json \
     --validation_file ../data/test_response_generation.json \
     --text_column prompt \
     --target_column output \
