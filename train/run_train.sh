@@ -5,13 +5,13 @@ deepspeed ./train.py \
     --deepspeed t0ds-config.json \
     --do_eval \
     --do_train \
-    --train_file ../data/test_response_generation.json \
+    --train_file ../data/train_response_generation.json \
     --validation_file ../data/test_response_generation.json \
     --text_column prompt \
     --target_column output \
     --output_dir output \
-    --per_device_train_batch_size=1 \
-    --per_device_eval_batch_size=1 \
+    --per_device_train_batch_size=8 \
+    --per_device_eval_batch_size=8 \
     --gradient_accumulation_steps 36\
     --gradient_checkpointing \
     --learning_rate 5e-05 \
@@ -31,4 +31,3 @@ deepspeed ./train.py \
 #
 #
 # --model_name_or_path bigscience/T0_3B \
-yuchenlin/BART0pp
