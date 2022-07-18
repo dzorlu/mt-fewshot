@@ -7,6 +7,8 @@ import sys
 import random
 from dataclasses import dataclass, field
 from typing import Optional
+import nltk
+nltk.download('punkt')
 
 import datasets
 import numpy as np

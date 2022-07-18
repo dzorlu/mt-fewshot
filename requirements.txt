@@ -7,3 +7,4 @@ git+https://github.com/Maluuba/nlg-eval.git@master
 sentencepiece
 rouge_score
 wandb
+nltk
