@@ -3,7 +3,6 @@ export WANDB_PROJECT=mt-fewshot
 deepspeed ./train.py \
     --model_name_or_path bigscience/T0_3B \
     --do_eval \
-    --deepspeed t0ds-config.json \
     --train_file ../data/train_response_generation.json \
     --validation_file ../data/test_response_generation.json \
     --text_column prompt \
@@ -23,9 +22,10 @@ deepspeed ./train.py \
     --save_steps 200\
     --eval_steps 200\
     --logging_steps 25 \
+    --fp16 \
     --report_to wandb
 
 ##--do_train \
 #--deepspeed ../t0ds-config.json \
 #
-# --fp16\
+# 
