@@ -1,7 +1,7 @@
 
 export WANDB_PROJECT=mt-fewshot
 deepspeed ./train.py \
-    --model_name_or_path bigscience/T0_3B \
+    --model_name_or_path yuchenlin/BART0pp \
     --deepspeed t0ds-config.json \
     --do_eval \
     --do_train \
@@ -30,4 +30,5 @@ deepspeed ./train.py \
 
 #
 #
-# 
+# --model_name_or_path bigscience/T0_3B \
+yuchenlin/BART0pp
