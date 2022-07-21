@@ -10,8 +10,8 @@ deepspeed ./train.py \
     --text_column prompt \
     --target_column output \
     --output_dir output \
-    --per_device_train_batch_size=8 \
-    --per_device_eval_batch_size=8 \
+    --per_device_train_batch_size=1 \
+    --per_device_eval_batch_size=1 \
     --gradient_accumulation_steps 36\
     --gradient_checkpointing \
     --learning_rate 5e-05 \
