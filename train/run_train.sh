@@ -1,8 +1,7 @@
 
 export WANDB_PROJECT=mt-fewshot
-deepspeed ./train.py \
+python ./train.py
     --model_name_or_path yuchenlin/BART0pp \
-    --deepspeed t0ds-config.json \
     --do_eval \
     --do_train \
     --train_file ../data/train_response_generation.json \
@@ -31,3 +30,5 @@ deepspeed ./train.py \
 #
 # --model_name_or_path bigscience/T0_3B \
 #--gradient_accumulation_steps 36\
+# deepspeed ./train.py \
+#     --deepspeed t0ds-config.json \
