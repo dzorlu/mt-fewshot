@@ -9,8 +9,8 @@ python ./train.py \
     --text_column prompt \
     --target_column output \
     --output_dir output \
-    --per_device_train_batch_size=64 \
-    --per_device_eval_batch_size=64 \
+    --per_device_train_batch_size=32 \
+    --per_device_eval_batch_size=32 \
     --gradient_checkpointing \
     --learning_rate 5e-05 \
     --predict_with_generate \
