@@ -8,7 +8,7 @@ python ./train.py \
     --validation_file ../data/test_response_generation.json \
     --text_column prompt \
     --target_column output \
-    --output_dir output \
+    --output_dir /hdd/mt_few \
     --per_device_train_batch_size=32 \
     --per_device_eval_batch_size=32 \
     --gradient_checkpointing \
