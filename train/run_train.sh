@@ -1,6 +1,6 @@
 
 export WANDB_PROJECT=mt-fewshot
-python ./train.py
+python ./train.py \
     --model_name_or_path yuchenlin/BART0pp \
     --do_eval \
     --do_train \
