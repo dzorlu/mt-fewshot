@@ -19,8 +19,8 @@ python ./train.py \
     --num_train_epochs 1\
     --load_best_model_at_end\
     --metric_for_best_model f1 \
-    --save_steps 200\
-    --eval_steps 200\
+    --save_steps 1000\
+    --eval_steps 1000\
     --logging_steps 25 \
     --fp16 \
     --report_to wandb
