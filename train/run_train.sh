@@ -2,7 +2,7 @@
 export WANDB_PROJECT=mt-fewshot
 
 deepspeed ./train.py \
-    --model_name_or_path yuchenlin/BART0pp \
+    --model_name_or_path bigscience/T0_3B \
     --deepspeed t0ds-config.json \
     --do_eval \
     --do_train \
@@ -10,9 +10,9 @@ deepspeed ./train.py \
     --validation_file ../data/test_response_generation.json \
     --text_column prompt \
     --target_column output \
-    --output_dir /hdd/mt_few/run2 \
-    --per_device_train_batch_size=32 \
-    --per_device_eval_batch_size=32 \
+    --output_dir /hdd/mt_few/run3 \
+    --per_device_train_batch_size=1 \
+    --per_device_eval_batch_size=1 \
     --gradient_checkpointing \
     --learning_rate 5e-05 \
     --predict_with_generate \
